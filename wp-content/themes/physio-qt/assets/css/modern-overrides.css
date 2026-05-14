@@ -115,3 +115,56 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   font-weight: 700;
   line-height: 1.3;
 }
+
+/* === Header centering on full-width screens === */
+
+/* Topbar tagline — center it (right column is empty so no conflict) */
+.header .header-topbar .header-topbar-sidebar.topbar-left {
+  text-align: center !important;
+  width: 100%;
+}
+.header .header-topbar .header-description {
+  text-align: center;
+}
+.header .header-topbar .header-topbar-sidebar.topbar-right:empty {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header .header-topbar .col-md-4,
+  .header .header-topbar .col-md-8 {
+    float: none;
+    width: 100%;
+  }
+}
+
+/* Header: nav-left | LOGO-center | button-right on desktop */
+@media (min-width: 992px) {
+  .header .header-wrapper > .container {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+  .header .header-wrapper .header-logo {
+    float: none !important;
+    order: 2;
+    flex: 1 1 auto;
+    text-align: center;
+    margin: 0;
+  }
+  .header .header-wrapper .header-logo a {
+    display: inline-block;
+  }
+  .header .header-wrapper .header-navigation {
+    order: 1;
+    flex: 0 0 auto;
+  }
+  .header .header-wrapper .featured-button.hidden-xs.hidden-sm {
+    order: 3;
+    flex: 0 0 auto;
+  }
+  /* Hide the mobile-only featured button on desktop (it was being rendered before flex order kicked in) */
+  .header .header-wrapper .featured-button.hidden-md.hidden-lg {
+    display: none !important;
+  }
+}
