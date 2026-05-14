@@ -137,38 +137,29 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   }
 }
 
-/* Header: nav-left | LOGO-center | button-right on desktop */
+/* Header: logo absolutely centered on desktop, nav menu + button flow naturally */
 @media (min-width: 992px) {
   .header .header-wrapper > .container {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
+    position: relative;
+    min-height: 113px;
   }
   .header .header-wrapper .header-logo {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
+    position: absolute !important;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     float: none !important;
-    order: 2;
-    flex: 1 1 auto;
     margin: 0;
+    padding: 0;
     height: auto;
-    padding: 20px 0;
-    text-align: center;
+    z-index: 5;
+    display: inline-block !important;
   }
   .header .header-wrapper .header-logo a {
     display: inline-block !important;
+    text-align: center;
   }
-  .header .header-wrapper .header-navigation {
-    order: 1;
-    flex: 0 0 auto;
-  }
-  .header .header-wrapper .featured-button.hidden-xs.hidden-sm {
-    order: 3;
-    flex: 0 0 auto;
-  }
-  /* Hide the mobile-only featured button on desktop (it was being rendered before flex order kicked in) */
+  /* Hide the mobile-only featured button on desktop */
   .header .header-wrapper .featured-button.hidden-md.hidden-lg {
     display: none !important;
   }
