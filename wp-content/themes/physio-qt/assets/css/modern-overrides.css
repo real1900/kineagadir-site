@@ -146,14 +146,19 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
     flex-wrap: nowrap;
   }
   .header .header-wrapper .header-logo {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     float: none !important;
     order: 2;
     flex: 1 1 auto;
-    text-align: center;
     margin: 0;
+    height: auto;
+    padding: 20px 0;
+    text-align: center;
   }
   .header .header-wrapper .header-logo a {
-    display: inline-block;
+    display: inline-block !important;
   }
   .header .header-wrapper .header-navigation {
     order: 1;
