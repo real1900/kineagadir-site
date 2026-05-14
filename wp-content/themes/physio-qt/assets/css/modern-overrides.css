@@ -1,0 +1,117 @@
+/* === Modern typography overrides — kineagadir.com === */
+:root {
+  --kg-text: #2d2d2d;
+  --kg-text-strong: #1a1a1a;
+  --kg-text-muted: #595959;
+  --kg-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
+  --kg-font-display: 'Manrope', var(--kg-font-body);
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--kg-font-body) !important;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  color: var(--kg-text) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+p, li, td, th, dd, dt, blockquote, label, input, textarea, select {
+  font-family: var(--kg-font-body);
+}
+
+/* Restore strong contrast on body text (theme had #999 — fails WCAG AA) */
+body,
+body p,
+.content-area .icon-box--description,
+.has-theme-text-color-color,
+.team-member--description,
+.testimonials .testimonial--description,
+.entry-content,
+.textwidget,
+.siteorigin-widget-tinymce {
+  color: var(--kg-text) !important;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.widget-title,
+.team-member--name,
+p.caption-heading-tag,
+.brochure,
+.testimonials .testimonial--author,
+.call-to-action .call-to-action--content .call-to-action--title,
+.counter .counter--text .counter--number {
+  font-family: var(--kg-font-display) !important;
+  color: var(--kg-text-strong);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.625rem, 3vw, 2rem); }
+h3 { font-size: clamp(1.375rem, 2.4vw, 1.625rem); }
+h4 { font-size: 1.25rem; font-weight: 600; }
+h5 { font-size: 1.125rem; font-weight: 600; }
+h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
+
+/* Navigation */
+.main-navigation > li > a {
+  font-family: var(--kg-font-display);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+/* Buttons */
+.btn {
+  font-family: var(--kg-font-display);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+/* Team member tag — modern eyebrow style */
+.team-member--tag {
+  color: var(--kg-text-muted) !important;
+  font-family: var(--kg-font-body);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+}
+
+.team-member--name {
+  font-size: 1.375rem;
+  font-weight: 700;
+  margin-bottom: 0.25em;
+}
+
+/* Page header subtitle muted */
+.page-header--subtitle {
+  color: var(--kg-text-muted) !important;
+}
+
+/* Caption headings (homepage hero overlays) — keep theme weight, just match family */
+.caption-heading-tag {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* Hero captions on slider keep their original colors (they're on dark images) */
+.jumbotron .jumbotron-caption .caption-small-heading {
+  font-family: var(--kg-font-display);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Call-to-action — keep white text on dark background, just font + weight */
+.call-to-action .call-to-action--content .call-to-action--title {
+  color: #ffffff !important;
+  font-weight: 700;
+  line-height: 1.3;
+}
