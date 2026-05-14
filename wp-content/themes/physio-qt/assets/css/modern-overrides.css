@@ -137,29 +137,46 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   }
 }
 
-/* Header: logo absolutely centered on desktop, nav menu + button flow naturally */
+/* Header on desktop: logo on top (centered, own row), nav menu below */
 @media (min-width: 992px) {
   .header .header-wrapper > .container {
     position: relative;
-    min-height: 113px;
+    padding-top: 20px;
+    padding-bottom: 0;
+    min-height: auto;
   }
+  /* Logo gets its own full-width row, centered */
   .header .header-wrapper .header-logo {
-    position: absolute !important;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: static !important;
+    transform: none !important;
     float: none !important;
-    margin: 0;
+    display: block !important;
+    text-align: center;
+    margin: 0 auto 15px;
     padding: 0;
     height: auto;
-    z-index: 5;
-    display: inline-block !important;
+    width: 100%;
   }
   .header .header-wrapper .header-logo a {
     display: inline-block !important;
+  }
+  /* Nav: full-width row below the logo, centered menu, button stays on right */
+  .header .header-wrapper .header-navigation {
+    position: relative;
+    width: 100%;
     text-align: center;
   }
-  /* Hide the mobile-only featured button on desktop */
+  .header .header-wrapper .header-navigation .navbar-collapse {
+    display: inline-block !important;
+    vertical-align: middle;
+  }
+  .header .header-wrapper .header-navigation .featured-button.hidden-xs.hidden-sm {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Hide mobile-only featured button on desktop */
   .header .header-wrapper .featured-button.hidden-md.hidden-lg {
     display: none !important;
   }
