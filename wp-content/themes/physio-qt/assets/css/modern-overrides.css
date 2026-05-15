@@ -246,3 +246,117 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   }
 }
 
+/* ============================================================
+ * Direction-aware layout overrides — use logical properties /
+ * flex so layouts auto-mirror for RTL without dir-specific rules.
+ * ============================================================ */
+
+/* Icon-box (advantages widgets, header widgets, footer widgets):
+ * convert from float-based to flex-based layout so icon position
+ * mirrors with the document direction.  This replaces the theme's
+ * `.icon-box--icon { float: left; margin-right: 20px; }` rule.
+ */
+.icon-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.icon-box .icon-box--icon {
+  float: none;
+  flex: 0 0 auto;
+  margin: 0;
+  width: auto;
+}
+.icon-box .icon-box--text {
+  flex: 1 1 auto;
+  overflow: visible;
+  text-align: start;   /* logical: left in LTR, right in RTL */
+  min-width: 0;
+}
+.icon-box .icon-box--title {
+  text-align: start;
+}
+.icon-box .icon-box--description {
+  text-align: start;
+}
+
+/* Header topbar icon-box still keeps inline-flex with smaller gap */
+.header .header-topbar .icon-box {
+  display: inline-flex;
+  gap: 7px;
+}
+
+/* Page-header + breadcrumbs — text-align: start instead of left */
+.page-header,
+.page-header--wrap,
+.page-header--title,
+.page-header--subtitle,
+.breadcrumbs {
+  text-align: start;
+}
+
+/* Team-member, featured-page, carousel captions, brochure — start-aligned */
+.team-member--content,
+.team-member--name,
+.team-member--description,
+.featured-page--content,
+.featured-page .featued-page--title,
+.jumbotron-caption,
+.jumbotron-caption .caption-small-heading,
+.jumbotron-caption .caption-heading,
+.jumbotron-caption .caption-content,
+.brochure,
+.featured-box,
+.page-content-extra ul li,
+.page-content-extra,
+.siteorigin-widget-tinymce {
+  text-align: start;
+}
+
+/* Lists — padding on the inline-start side */
+.page-content-extra ul,
+.siteorigin-widget-tinymce ul {
+  padding-inline-start: 1.5em;
+  padding-inline-end: 0;
+}
+
+/* Opening-hours: the .right time value floats to the inline-end side */
+.opening-hours ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.opening-hours ul li .right {
+  float: none;
+  text-align: end;
+}
+
+/* Sidebar (service pages) */
+.sidebar,
+aside.sidebar,
+.sidebar .widget_nav_menu ul.menu li,
+.footer .widget,
+.footer .icon-box--text,
+.footer--top-container,
+.footer .widget_nav_menu ul.menu li {
+  text-align: start;
+}
+
+/* Brochure icon — flex layout, gap handles spacing */
+.brochure {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.brochure i {
+  float: none;
+  margin: 0;
+}
+
+/* Buttons with icons inside */
+.btn i,
+.btn .fa {
+  margin-inline-end: 6px;
+  margin-inline-start: 0;
+  margin-right: unset;
+  margin-left: unset;
+}

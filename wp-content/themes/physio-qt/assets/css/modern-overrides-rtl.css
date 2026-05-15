@@ -1,47 +1,58 @@
 /* =============================================================================
  * modern-overrides-rtl.css
- * Right-to-left layout overlay for Arabic (ar-MA).
- * Loaded only when <html dir="rtl">. Mirrors the LTR layout for the physio-qt
- * theme + modern overrides — nav, breadcrumbs, lists, icon-box, footer, sidebar.
+ * Right-to-left layout adjustments for Arabic (ar-MA).
+ * Loaded only when <html dir="rtl">.
+ *
+ * NOTE: Most directional layout rules now live in modern-overrides.css using
+ * logical properties (text-align: start/end, padding-inline-start/end, flex
+ * with `direction: rtl` cascading from <html>). This file contains only
+ * RTL-specific tweaks that aren't expressible as logical properties.
  * =============================================================================
  */
 
-html[dir="rtl"] body,
-html[dir="rtl"] p,
-html[dir="rtl"] li,
-html[dir="rtl"] td,
-html[dir="rtl"] th,
-html[dir="rtl"] .siteorigin-widget-tinymce.textwidget,
-html[dir="rtl"] .page-content-extra {
-	text-align: right;
+/* Slight typography tuning for Arabic script — it reads more comfortably
+ * a touch larger with extra line-height. */
+html[dir="rtl"] body {
+	font-size: 16px;
+	line-height: 1.75;
 }
 
-/* Headings keep their natural alignment but the page-header subtitle is start-aligned */
-html[dir="rtl"] .page-header,
-html[dir="rtl"] .page-header--wrap,
-html[dir="rtl"] .page-header--title,
-html[dir="rtl"] .page-header--subtitle {
-	text-align: right;
-}
-
-/* Breadcrumbs: reverse the chevron flow */
-html[dir="rtl"] .breadcrumbs {
-	text-align: right;
-	direction: rtl;
-}
+/* Breadcrumb separator flips direction (the chevron pointer) */
 html[dir="rtl"] .breadcrumbs span[property="itemListElement"]::after {
-	content: "‹ ";   /* opposite-direction separator (RTL renders correctly) */
+	content: "‹ ";
 }
 html[dir="rtl"] .breadcrumbs span[property="itemListElement"]:last-child::after {
 	content: "";
 }
 
-/* Main navigation: flip direction and align nav items right */
-html[dir="rtl"] #menu-main-navigation,
-html[dir="rtl"] .main-navigation {
-	direction: rtl;
-	text-align: right;
+/* Embedded Calendly widget — opt-out: stays LTR (its own UI is in English/French) */
+html[dir="rtl"] .calendly-inline-widget {
+	direction: ltr;
+	text-align: left;
 }
+
+/* Embedded Google Maps iframe — stays LTR (Google Maps controls assume LTR) */
+html[dir="rtl"] .qt-map-iframe iframe {
+	direction: ltr;
+}
+
+/* Numeric / Latin-script content nested in RTL paragraphs reads better
+ * with bidirectional isolation. Phone numbers, addresses with Latin chars,
+ * etc. — wrap them in <bdi> in HTML if needed; this is a fallback. */
+html[dir="rtl"] code,
+html[dir="rtl"] var,
+html[dir="rtl"] kbd,
+html[dir="rtl"] samp,
+html[dir="rtl"] .calendly-inline-widget * {
+	unicode-bidi: isolate;
+}
+
+/* Language-switcher: in RTL the `.lang-ar` pill is the active language;
+ * font-family for the Arabic glyph is already set in modern-overrides.css. */
+
+/* Navigation menu and sub-menu — Bootstrap's float-based nav doesn't
+ * auto-mirror, so flip its float here. (Hard to use logical properties
+ * because Bootstrap 3 wasn't written with them.) */
 html[dir="rtl"] .main-navigation > li {
 	float: right;
 }
@@ -49,8 +60,6 @@ html[dir="rtl"] .main-navigation .sub-menu {
 	right: 0;
 	left: auto;
 }
-
-/* Header logo + navigation alignment */
 html[dir="rtl"] .header-logo {
 	float: right;
 }
@@ -59,120 +68,4 @@ html[dir="rtl"] .header-navigation {
 }
 html[dir="rtl"] .featured-button {
 	float: left;
-}
-
-/* Icon boxes (header widgets, footer): icon on the right of text */
-html[dir="rtl"] .icon-box {
-	direction: rtl;
-}
-html[dir="rtl"] .icon-box .icon-box--icon {
-	float: right;
-	margin-left: 15px;
-	margin-right: 0;
-}
-html[dir="rtl"] .icon-box .icon-box--text {
-	text-align: right;
-}
-
-/* Lists with bullets — flip indentation */
-html[dir="rtl"] ul,
-html[dir="rtl"] ol {
-	padding-right: 1.5em;
-	padding-left: 0;
-}
-html[dir="rtl"] .page-content-extra ul li,
-html[dir="rtl"] .siteorigin-widget-tinymce ul li {
-	text-align: right;
-}
-
-/* Opening-hours widget: time value on the left side (since "right" class is now mirrored) */
-html[dir="rtl"] .opening-hours ul li {
-	direction: rtl;
-}
-html[dir="rtl"] .opening-hours ul li .right {
-	float: left;
-}
-
-/* Footer columns keep their grid but text reads RTL */
-html[dir="rtl"] .footer .widget,
-html[dir="rtl"] .footer .icon-box--text,
-html[dir="rtl"] .footer .footer--bottom .bottom-left,
-html[dir="rtl"] .footer .footer--bottom .bottom-right,
-html[dir="rtl"] .footer--top-container,
-html[dir="rtl"] .footer .widget_nav_menu ul.menu li {
-	text-align: right;
-}
-
-/* Sidebar (service pages): align with body */
-html[dir="rtl"] .sidebar,
-html[dir="rtl"] aside.sidebar {
-	text-align: right;
-}
-html[dir="rtl"] .sidebar .widget_nav_menu ul.menu li {
-	text-align: right;
-}
-
-/* Language switcher pills */
-html[dir="rtl"] .language-switcher {
-	float: left;
-}
-
-/* Carousel captions on home — text reads from right */
-html[dir="rtl"] .jumbotron-caption,
-html[dir="rtl"] .jumbotron-caption .caption-small-heading,
-html[dir="rtl"] .jumbotron-caption .caption-heading,
-html[dir="rtl"] .jumbotron-caption .caption-content {
-	text-align: right;
-}
-
-/* Featured-page cards (services hub) */
-html[dir="rtl"] .featured-page--content,
-html[dir="rtl"] .featured-page .featued-page--title {
-	text-align: right;
-}
-
-/* Buttons keep their padding but icons inside flip */
-html[dir="rtl"] .btn i,
-html[dir="rtl"] .btn .fa {
-	margin-left: 6px;
-	margin-right: 0;
-}
-
-/* Brochure / CTA blocks */
-html[dir="rtl"] .brochure {
-	text-align: right;
-}
-html[dir="rtl"] .brochure i {
-	float: right;
-	margin-left: 12px;
-	margin-right: 0;
-}
-
-/* Team member component */
-html[dir="rtl"] .team-member--content,
-html[dir="rtl"] .team-member--name,
-html[dir="rtl"] .team-member--description {
-	text-align: right;
-}
-
-/* Inline form/contact widgets (book-appointment intro) */
-html[dir="rtl"] .featured-box {
-	text-align: right;
-}
-
-/* Embedded Calendly widget keeps LTR (their UI is English/French) — opt out */
-html[dir="rtl"] .calendly-inline-widget {
-	direction: ltr;
-	text-align: left;
-}
-
-/* Embedded Google Maps iframe keeps LTR */
-html[dir="rtl"] .qt-map-iframe iframe {
-	direction: ltr;
-}
-
-/* General font tuning — Arabic looks better in slightly larger size */
-html[dir="rtl"] body {
-	font-size: 16px;
-	line-height: 1.7;
 }
