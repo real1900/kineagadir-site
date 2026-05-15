@@ -347,6 +347,24 @@ aside.sidebar,
   text-align: start;
 }
 
+/* Footer menu links — keep both columns visually identical.
+ * Without this, the chevron-marker color drifts and the two columns
+ * read at different brightness. */
+.footer .footer--middle .widget_nav_menu ul.menu li > a {
+  color: #C1C7CE;
+}
+.footer .footer--middle .widget_nav_menu ul.menu li > a::before {
+  color: rgba(193, 199, 206, 0.45);
+}
+.footer .footer--middle .widget_nav_menu ul.menu li > a:hover,
+.footer .footer--middle .widget_nav_menu ul.menu li.current-menu-item > a {
+  color: #ffffff;
+}
+.footer .footer--middle .widget_nav_menu ul.menu li > a:hover::before,
+.footer .footer--middle .widget_nav_menu ul.menu li.current-menu-item > a::before {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 /* Brochure icon — flex layout, gap handles spacing */
 .brochure {
   display: inline-flex;
