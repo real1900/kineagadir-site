@@ -181,3 +181,68 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
     display: none !important;
   }
 }
+
+/* ============================================================
+ * Language switcher (FR / AR / EN) in the header top-bar
+ * ============================================================ */
+.header .header-topbar .topbar-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 32px;
+}
+.language-switcher {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  padding: 6px 0;
+}
+.language-switcher .lang-link {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #c1c7ce;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+  line-height: 1;
+  white-space: nowrap;
+}
+.language-switcher .lang-link:hover,
+.language-switcher .lang-link:focus {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+}
+.language-switcher .lang-link.active {
+  color: #fff;
+  background: #56afd5;
+  border-color: #56afd5;
+  cursor: default;
+}
+.language-switcher .lang-link.active:hover {
+  background: #56afd5;
+  border-color: #56afd5;
+}
+.language-switcher .lang-ar {
+  /* Arabic glyph rendering tweak — bump size very slightly for readability */
+  font-size: 13px;
+  font-family: "Tahoma", "Arial", sans-serif;
+}
+
+/* On mobile, center the switcher below the tagline (the topbar stacks) */
+@media (max-width: 991px) {
+  .header .header-topbar .topbar-right {
+    justify-content: center;
+    padding-bottom: 6px;
+  }
+  .language-switcher {
+    padding: 4px 0 8px;
+  }
+}
+

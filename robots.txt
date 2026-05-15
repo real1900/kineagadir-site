@@ -1,0 +1,22 @@
+# robots.txt — Cabinet de Kinésithérapie, Temsia, Agadir
+# https://www.kineagadir.com/
+
+User-agent: *
+Allow: /
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/cache/
+
+# Locale roots are crawlable
+Allow: /ar/
+Allow: /en/
+
+# Crawler hints
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://www.kineagadir.com/sitemap.xml
