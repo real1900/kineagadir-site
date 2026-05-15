@@ -333,6 +333,39 @@
   </url>
 
   <url>
+    <loc>https://www.kineagadir.com/pathologies/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://www.kineagadir.com/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://www.kineagadir.com/ar/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kineagadir.com/en/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kineagadir.com/pathologies/"/>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kineagadir.com/ar/pathologies/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://www.kineagadir.com/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://www.kineagadir.com/ar/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kineagadir.com/en/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kineagadir.com/pathologies/"/>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.kineagadir.com/en/pathologies/</loc>
+    <xhtml:link rel="alternate" hreflang="fr-MA" href="https://www.kineagadir.com/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="ar-MA" href="https://www.kineagadir.com/ar/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.kineagadir.com/en/pathologies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.kineagadir.com/pathologies/"/>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://www.kineagadir.com/pathologies/lombalgie/</loc>
     <xhtml:link rel="alternate" hreflang="fr-MA" href="https://www.kineagadir.com/pathologies/lombalgie/"/>
     <xhtml:link rel="alternate" hreflang="ar-MA" href="https://www.kineagadir.com/ar/pathologies/lombalgie/"/>
