@@ -347,22 +347,35 @@ aside.sidebar,
   text-align: start;
 }
 
-/* Footer menu links — keep both columns visually identical.
- * Without this, the chevron-marker color drifts and the two columns
- * read at different brightness. */
-.footer .footer--middle .widget_nav_menu ul.menu li > a {
-  color: #C1C7CE;
-}
-.footer .footer--middle .widget_nav_menu ul.menu li > a::before {
-  color: rgba(193, 199, 206, 0.45);
-}
-.footer .footer--middle .widget_nav_menu ul.menu li > a:hover,
-.footer .footer--middle .widget_nav_menu ul.menu li.current-menu-item > a {
+/* Footer text — force everything to white for readability against the
+ * dark footer background. Overrides the various #C1C7CE / #909BA2
+ * defaults from the WordPress theme customizer. */
+.footer,
+.footer .footer--top,
+.footer .footer--middle,
+.footer .footer--bottom,
+.footer p,
+.footer span,
+.footer li,
+.footer .widget-title,
+.footer .icon-box--title,
+.footer .icon-box--description,
+.footer .opening-hours ul li,
+.footer .opening-hours ul li span,
+.footer .footer--middle .widget_nav_menu ul.menu li > a,
+.footer .footer--middle .widget_nav_menu ul.menu li.current-menu-item > a,
+.footer .footer--bottom a {
   color: #ffffff;
 }
-.footer .footer--middle .widget_nav_menu ul.menu li > a:hover::before,
-.footer .footer--middle .widget_nav_menu ul.menu li.current-menu-item > a::before {
-  color: rgba(255, 255, 255, 0.75);
+.footer .footer--middle .widget_nav_menu ul.menu li > a::before {
+  color: rgba(255, 255, 255, 0.6);
+}
+.footer .footer--middle .widget_nav_menu ul.menu li > a:hover {
+  color: #ffffff;
+  opacity: 0.85;
+}
+.footer .footer--middle .widget_nav_menu ul.menu li > a:hover::before {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* Brochure icon — flex layout, gap handles spacing */
