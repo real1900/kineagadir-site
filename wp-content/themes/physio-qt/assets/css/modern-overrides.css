@@ -211,10 +211,11 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   font-weight: 700;
   letter-spacing: 0.04em;
   text-decoration: none;
-  /* WCAG AA: 4.5+ contrast against the #707780 topbar */
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* WCAG AA: white on solid #3e4248 = 9.5 contrast.
+     The rgba(0,0,0,0.45) over the #707780 topbar gives ~#3e4248. */
+  color: #ffffff !important;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   transition: color 0.15s, background 0.15s, border-color 0.15s;
   line-height: 1;
   white-space: nowrap;
@@ -227,14 +228,15 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   text-decoration: none;
 }
 .language-switcher .lang-link.active {
-  color: #fff;
-  background: #56afd5;
-  border-color: #56afd5;
+  color: #ffffff !important;
+  /* WCAG AA: white on #1c6e91 = ~5.7 contrast (was #56afd5 = 2.47). */
+  background: #1c6e91;
+  border-color: #1c6e91;
   cursor: default;
 }
 .language-switcher .lang-link.active:hover {
-  background: #56afd5;
-  border-color: #56afd5;
+  background: #1c6e91;
+  border-color: #1c6e91;
 }
 .language-switcher .lang-ar {
   /* Arabic glyph rendering tweak — bump size very slightly for readability */
@@ -408,8 +410,9 @@ aside.sidebar,
 .footer .opening-hours ul li span,
 .footer .footer--middle .widget_nav_menu ul.menu li > a,
 .footer .footer--middle .widget_nav_menu ul.menu li.current-menu-item > a,
-.footer .footer--bottom a {
-  color: #ffffff;
+.footer .footer--bottom a,
+.footer .footer--bottom p {
+  color: #ffffff !important;
 }
 .footer .footer--middle .widget_nav_menu ul.menu li > a::before {
   color: rgba(255, 255, 255, 0.6);
@@ -460,7 +463,7 @@ aside.sidebar,
 
 /* Main navigation text on white. #828282 → #555 lifts contrast from
    3.84 to ~7.3. Brand-blue link color #56afd5 (2.47) is bumped to a
-   darker hue #2a8db5 (~4.6). */
+   darker hue #1c6e91 (~4.6). */
 @media (min-width: 992px) {
   .main-navigation > li > a {
     color: #555555 !important;
@@ -468,13 +471,13 @@ aside.sidebar,
   .main-navigation > li.current-menu-item > a,
   .main-navigation > li.current_page_parent > a,
   .main-navigation > li.current-menu-ancestor > a {
-    color: #2a8db5 !important;
+    color: #1c6e91 !important;
   }
   .main-navigation > li:hover > a,
   .main-navigation > li.current-menu-item:hover > a,
   .main-navigation > li.current_page_parent:hover > a,
   .main-navigation > li.current-menu-ancestor:hover > a {
-    color: #2a8db5 !important;
+    color: #1c6e91 !important;
   }
 }
 
@@ -495,8 +498,8 @@ aside.sidebar,
 }
 
 /* Card-style "En savoir plus" links rendered in brand blue on white.
-   #56afd5 → #2a8db5 lifts contrast from 2.47 to ~4.6 (AA). */
+   #56afd5 → #1c6e91 lifts contrast from 2.47 to ~4.6 (AA). */
 a.text-link,
 .content-area a.text-link {
-  color: #2a8db5 !important;
+  color: #1c6e91 !important;
 }
