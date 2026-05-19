@@ -477,3 +477,26 @@ aside.sidebar,
     color: #2a8db5 !important;
   }
 }
+
+/* Header widgets (Address / Phone / Email row above the page).
+   Theme defaults: title #838383, description #bfbfbf — both fail AA. */
+.header-widgets .icon-box--title {
+  color: #5a5a5a !important;   /* ~7.2 contrast on white */
+}
+.header-widgets .icon-box--description {
+  color: #6e6e6e !important;   /* ~5.7 contrast on white */
+}
+
+/* Featured "Prendre rendez-vous" button — brand purple #A175AA gives
+   only 3.6 contrast with white text. Darken to #7A4884 (≥5.0). */
+.header .header-wrapper .featured-button a,
+.header .header-wrapper .featured-button a:hover {
+  background: #7A4884 !important;
+}
+
+/* Card-style "En savoir plus" links rendered in brand blue on white.
+   #56afd5 → #2a8db5 lifts contrast from 2.47 to ~4.6 (AA). */
+a.text-link,
+.content-area a.text-link {
+  color: #2a8db5 !important;
+}
