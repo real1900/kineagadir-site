@@ -48,7 +48,7 @@
 	
 	<link rel='stylesheet' id='siteorigin-panels-front-css' href='/wp-content/plugins/siteorigin-panels/css/front-flex.min.css?ver=2.31.4' type='text/css' media='all' />
 	<link rel='stylesheet' id='physio-qt-fonts-css' href='https://fonts.googleapis.com/css?family=Open+Sans%3A400%2C700%7CNunito%3A400%2C700&amp;subset=latin%2Clatin-ext&amp;display=swap' type='text/css' media='all' />
-	<link rel='stylesheet' id='font-awesome-css' href='/wp-content/themes/physio-qt/assets/icons/fontawesome/css/all.min.css?ver=1' type='text/css' media='all' />
+	<link rel='stylesheet' id='font-awesome-css' href='/wp-content/themes/physio-qt/assets/icons/fontawesome/css/subset.min.css?ver=1' type='text/css' media='all' />
 	<link rel='stylesheet' id='bootstrap-css' href='/wp-content/themes/physio-qt/assets/css/bootstrap.css?ver=1' type='text/css' media='all' />
 	<link rel='stylesheet' id='physio-qt-style-css' href='/wp-content/themes/physio-qt/style.css?ver=3.0.1' type='text/css' media='all' />
 	<script type="text/javascript" src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
@@ -64,7 +64,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap">
 	
-	<link rel="stylesheet" href="/wp-content/themes/physio-qt/assets/css/modern-overrides.css?v=7">
+	<link rel="stylesheet" href="/wp-content/themes/physio-qt/assets/css/modern-overrides.css?v=8">
 	
 
 	
@@ -303,20 +303,20 @@
 				</button>
 
 				<nav id="navbar" class="collapse navbar-collapse" aria-label="Main Navigation">
-					<ul id="menu-main-navigation" class="main-navigation" role="menubar">
+					<ul id="menu-main-navigation" class="main-navigation">
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item">
 							<a href="/en/">Physiotherapy Clinic</a>
 						</li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" aria-haspopup="true" aria-expanded="false" tabindex="0">
 							<a href="/en/about-us/">About us</a>
-							<ul class="sub-menu" role="menu">
+							<ul class="sub-menu">
 								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/en/about-us/">About us</a></li>
 								<li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/en/agadir/">Our clinic in Temsia</a></li>
 							</ul>
 						</li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" aria-haspopup="true" aria-expanded="false" tabindex="0">
 							<a href="/en/services/">Our services</a>
-							<ul class="sub-menu" role="menu">
+							<ul class="sub-menu">
 								<li class="menu-item"><a href="/en/services/physiotherapie/">Physiotherapy</a></li>
 								<li class="menu-item"><a href="/en/services/massage-therapy/">Therapeutic massage</a></li>
 								<li class="menu-item"><a href="/en/services/laser-therapie/">Laser therapy</a></li>
@@ -327,7 +327,7 @@
 						</li>
 						<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children" aria-haspopup="true" aria-expanded="false" tabindex="0">
 							<a href="/en/pathologies/">Conditions</a>
-							<ul class="sub-menu" role="menu">
+							<ul class="sub-menu">
 								<li class="menu-item"><a href="/en/pathologies/lombalgie/">Low back pain</a></li>
 								<li class="menu-item"><a href="/en/pathologies/sciatique/">Sciatica</a></li>
 								<li class="menu-item"><a href="/en/pathologies/cervicalgie/">Neck pain</a></li>
@@ -353,7 +353,7 @@
 				<a class="icon-box" href="https://www.google.com/maps/dir/Current+Location/30.366667,-9.420611" target="_blank">
 					<div class="icon-box--icon"><i class="fa fas fa-home"></i></div>
 					<div class="icon-box--text">
-						<h6 class="icon-box--title">Visit our clinic</h6>
+						<h3 class="icon-box--title">Visit our clinic</h3>
 						<span class="icon-box--description">697 Rue 02, Av Alwifaq, Temsia</span>
 					</div>
 				</a>
@@ -362,7 +362,7 @@
 				<a class="icon-box" href="tel:+212659730283">
 					<div class="icon-box--icon"><i class="fa fas fa-phone-alt"></i></div>
 					<div class="icon-box--text">
-						<h6 class="icon-box--title">Call us</h6>
+						<h3 class="icon-box--title">Call us</h3>
 						<span class="icon-box--description">+212 6 59 73 02 83</span>
 					</div>
 				</a>
@@ -371,7 +371,7 @@
 				<a class="icon-box" href="mailto:info@kineagadir.com">
 					<div class="icon-box--icon"><i class="fa fas fa-envelope"></i></div>
 					<div class="icon-box--text">
-						<h6 class="icon-box--title">Email us</h6>
+						<h3 class="icon-box--title">Email us</h3>
 						<span class="icon-box--description">info@kineagadir.com</span>
 					</div>
 				</a>
@@ -382,6 +382,7 @@
 
 
 
+<main id="main" class="content home-content">
 <!-- HAND_TRANSLATED — do not regenerate via translate_bodies.py -->
 <style media="all" id="siteorigin-panels-layouts-head">/* Layout 55 */ #pgc-55-0-0 , #pgc-55-0-1 , #pgc-55-0-2 , #pgc-55-0-3 { width:25%;width:calc(25% - ( 0.75 * 30px ) ) } #pg-55-0 , #pg-55-1 , #pg-55-3 { margin-bottom:70px } #pgc-55-1-0 , #pgc-55-1-1 , #pgc-55-4-0 , #pgc-55-4-1 { width:50%;width:calc(50% - ( 0.5 * 30px ) ) } #pgc-55-2-0 , #pgc-55-5-0 , #pgc-55-6-0 { width:100%;width:calc(100% - ( 0 * 30px ) ) } #pg-55-2 { margin-bottom:10px } #pgc-55-3-0 , #pgc-55-3-1 , #pgc-55-3-2 { width:33.3333%;width:calc(33.3333% - ( 0.66666666666667 * 30px ) ) } #pg-55-4 , #pl-55 .so-panel { margin-bottom:30px } #pg-55-5 , #pg-55-6 , #pl-55 .so-panel:last-of-type { margin-bottom:0px } #pg-55-1> .panel-row-style { background-color:#f5f8fb;padding:70px } #pg-55-4.panel-has-style > .panel-row-style, #pg-55-4.panel-no-style , #pg-55-5.panel-has-style > .panel-row-style, #pg-55-5.panel-no-style { -webkit-align-items:flex-start;align-items:flex-start } #pg-55-5> .panel-row-style { background-color:#cecece;background-image:url(/wp-content/uploads/2021/12/cta-background.jpg);background-repeat:repeat;padding:90px;background-position:center bottom } #pgc-55-5-0 { align-self:auto } @media (max-width:991px){ #pg-55-0.panel-no-style, #pg-55-0.panel-has-style > .panel-row-style, #pg-55-0 , #pg-55-1.panel-no-style, #pg-55-1.panel-has-style > .panel-row-style, #pg-55-1 , #pg-55-2.panel-no-style, #pg-55-2.panel-has-style > .panel-row-style, #pg-55-2 , #pg-55-3.panel-no-style, #pg-55-3.panel-has-style > .panel-row-style, #pg-55-3 , #pg-55-4.panel-no-style, #pg-55-4.panel-has-style > .panel-row-style, #pg-55-4 , #pg-55-5.panel-no-style, #pg-55-5.panel-has-style > .panel-row-style, #pg-55-5 , #pg-55-6.panel-no-style, #pg-55-6.panel-has-style > .panel-row-style, #pg-55-6 { -webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column } #pg-55-0 > .panel-grid-cell , #pg-55-0 > .panel-row-style > .panel-grid-cell , #pg-55-1 > .panel-grid-cell , #pg-55-1 > .panel-row-style > .panel-grid-cell , #pg-55-2 > .panel-grid-cell , #pg-55-2 > .panel-row-style > .panel-grid-cell , #pg-55-3 > .panel-grid-cell , #pg-55-3 > .panel-row-style > .panel-grid-cell , #pg-55-4 > .panel-grid-cell , #pg-55-4 > .panel-row-style > .panel-grid-cell , #pg-55-5 > .panel-grid-cell , #pg-55-5 > .panel-row-style > .panel-grid-cell , #pg-55-6 > .panel-grid-cell , #pg-55-6 > .panel-row-style > .panel-grid-cell { width:100%;margin-right:0 } #pgc-55-0-0 , #pgc-55-0-1 , #pgc-55-0-2 , #pgc-55-1-0 , #pgc-55-3-0 , #pgc-55-3-1 , #pgc-55-4-0 { margin-bottom:30px } #pl-55 .panel-grid-cell { padding:0 } #pl-55 .panel-grid .panel-grid-cell-empty { display:none } #pl-55 .panel-grid .panel-grid-cell-mobile-last { margin-bottom:0px }  }</style>
 <div id="jumbotron-fullwidth" class="jumbotron carousel slide carousel-fade carousel-touch" data-ride="carousel" data-interval="6000" data-pause="null">
@@ -443,7 +444,7 @@
 					<a href="/en/services/physiotherapie/"><img loading="lazy" decoding="async" width="360" height="240" src="/wp-content/uploads/2021/11/B8997F5A-00E2-453E-B597-3E036177FC8B-360x240.png" class="attachment-physio-qt-featured-s size-physio-qt-featured-s" alt="Physiotherapy" srcset="/wp-content/uploads/2021/11/B8997F5A-00E2-453E-B597-3E036177FC8B-360x240.png 360w, /wp-content/uploads/2021/11/B8997F5A-00E2-453E-B597-3E036177FC8B-850x567.png 850w, /wp-content/uploads/2021/11/B8997F5A-00E2-453E-B597-3E036177FC8B-272x182.png 272w" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" /><div class="featured-page--overlay"><div class="overlay--center"><span>Learn more</span></div></div></a>
 				</div>
 				<div class="featured-page--content">
-					<h4 class="featued-page--title"><a href="/en/services/physiotherapie/">Physiotherapy</a></h4>
+					<h3 class="featued-page--title"><a href="/en/services/physiotherapie/">Physiotherapy</a></h4>
 					<p>Physiotherapy is one of our flagship services. We work closely with patients to help them improve their movement potential...</p>
 					<a href="/en/services/physiotherapie/" class="text-link">Learn more about physiotherapy</a>
 				</div>
@@ -454,7 +455,7 @@
 					<a href="/en/services/laser-therapie/"><img loading="lazy" decoding="async" width="360" height="240" src="/wp-content/uploads/2021/11/36F86521-1C12-4E4A-914A-EB1E661A6B74-360x240.png" class="attachment-physio-qt-featured-s size-physio-qt-featured-s" alt="Laser therapy" srcset="/wp-content/uploads/2021/11/36F86521-1C12-4E4A-914A-EB1E661A6B74-360x240.png 360w, /wp-content/uploads/2021/11/36F86521-1C12-4E4A-914A-EB1E661A6B74-272x182.png 272w" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" /><div class="featured-page--overlay"><div class="overlay--center"><span>Learn more</span></div></div></a>
 				</div>
 				<div class="featured-page--content">
-					<h4 class="featued-page--title"><a href="/en/services/laser-therapie/">Laser therapy</a></h4>
+					<h3 class="featued-page--title"><a href="/en/services/laser-therapie/">Laser therapy</a></h4>
 					<p>This is a medical technique that improves tissue growth and healing through exposure to laser light. In medicine, the use of laser for...</p>
 					<a href="/en/services/laser-therapie/" class="text-link">Learn more about laser therapy</a>
 				</div>
@@ -465,7 +466,7 @@
 					<a href="/en/services/clinical-pilates/"><img loading="lazy" decoding="async" width="360" height="240" src="/wp-content/uploads/2021/11/4ED12180-FD0F-433E-BC72-9E279E336B88-360x240.png" class="attachment-physio-qt-featured-s size-physio-qt-featured-s" alt="Clinical Pilates" srcset="/wp-content/uploads/2021/11/4ED12180-FD0F-433E-BC72-9E279E336B88-360x240.png 360w, /wp-content/uploads/2021/11/4ED12180-FD0F-433E-BC72-9E279E336B88-300x200.png 300w, /wp-content/uploads/2021/11/4ED12180-FD0F-433E-BC72-9E279E336B88-600x401.png 600w, /wp-content/uploads/2021/11/4ED12180-FD0F-433E-BC72-9E279E336B88-272x182.png 272w, /wp-content/uploads/2021/11/4ED12180-FD0F-433E-BC72-9E279E336B88.png 710w" sizes="(min-width: 781px) 360px, calc(100vw - 30px)" /><div class="featured-page--overlay"><div class="overlay--center"><span>Learn more</span></div></div></a>
 				</div>
 				<div class="featured-page--content">
-					<h4 class="featued-page--title"><a href="/en/services/clinical-pilates/">Clinical Pilates</a></h4>
+					<h3 class="featued-page--title"><a href="/en/services/clinical-pilates/">Clinical Pilates</a></h4>
 					<p>Pilates is an exercise program designed to engage the deep muscles of the spine and the core so they work more efficiently...</p>
 					<a href="/en/services/clinical-pilates/" class="text-link">Learn more about clinical Pilates</a>
 				</div>
@@ -485,42 +486,42 @@
 </div></div></div></div></div><div id="pg-55-3"  class="panel-grid panel-no-style" ><div id="pgc-55-3-0"  class="panel-grid-cell" ><div id="panel-55-3-0-0" class="so-panel widget widget_qt_icon_box widget-icon-box panel-first-child" data-index="7" >				<div class="icon-box">
 				<div class="icon-box--icon"><i class="fa fas fa-briefcase-medical"></i></div>
 				<div class="icon-box--text">
-					<h6 class="icon-box--title">Personalized treatment</h6>
+					<h3 class="icon-box--title">Personalized treatment</h3>
 					<span class="icon-box--description">You'll receive a complete, personalized treatment</span>
 				</div>
 			</div>
 		</div><div id="panel-55-3-0-1" class="so-panel widget widget_qt_icon_box widget-icon-box panel-last-child" data-index="8" >				<div class="icon-box">
 				<div class="icon-box--icon"><i class="fa far fa-building"></i></div>
 				<div class="icon-box--text">
-					<h6 class="icon-box--title">Comfortable clinic</h6>
+					<h3 class="icon-box--title">Comfortable clinic</h3>
 					<span class="icon-box--description">Our clinic feels like a comfortable health and wellness center</span>
 				</div>
 			</div>
 		</div></div><div id="pgc-55-3-1"  class="panel-grid-cell" ><div id="panel-55-3-1-0" class="so-panel widget widget_qt_icon_box widget-icon-box panel-first-child" data-index="9" >				<div class="icon-box">
 				<div class="icon-box--icon"><i class="fa fas fa-check"></i></div>
 				<div class="icon-box--text">
-					<h6 class="icon-box--title">Certified therapists</h6>
+					<h3 class="icon-box--title">Certified therapists</h3>
 					<span class="icon-box--description">Your treatment is delivered only by certified therapists</span>
 				</div>
 			</div>
 		</div><div id="panel-55-3-1-1" class="so-panel widget widget_qt_icon_box widget-icon-box panel-last-child" data-index="10" >				<div class="icon-box">
 				<div class="icon-box--icon"><i class="fa fas fa-users"></i></div>
 				<div class="icon-box--text">
-					<h6 class="icon-box--title">Network of practitioners</h6>
+					<h3 class="icon-box--title">Network of practitioners</h3>
 					<span class="icon-box--description">We collaborate closely with all your healthcare providers</span>
 				</div>
 			</div>
 		</div></div><div id="pgc-55-3-2"  class="panel-grid-cell" ><div id="panel-55-3-2-0" class="so-panel widget widget_qt_icon_box widget-icon-box panel-first-child" data-index="11" >				<div class="icon-box">
 				<div class="icon-box--icon"><i class="fa fas fa-graduation-cap"></i></div>
 				<div class="icon-box--text">
-					<h6 class="icon-box--title">Experienced team</h6>
+					<h3 class="icon-box--title">Experienced team</h3>
 					<span class="icon-box--description">Our therapists are trained and certified in therapeutic techniques</span>
 				</div>
 			</div>
 		</div><div id="panel-55-3-2-1" class="so-panel widget widget_qt_icon_box widget-icon-box panel-last-child" data-index="12" >				<div class="icon-box">
 				<div class="icon-box--icon"><i class="fa far fa-check-circle"></i></div>
 				<div class="icon-box--text">
-					<h6 class="icon-box--title">Treatment goals</h6>
+					<h3 class="icon-box--title">Treatment goals</h3>
 					<span class="icon-box--description">Setting goals is the best way to achieve a successful outcome</span>
 				</div>
 			</div>
@@ -534,7 +535,7 @@
 					<img loading="lazy" decoding="async" width="800" height="800" src="/wp-content/uploads/2026/05/houda-gouizine.jpg" class="attachment-full size-full" alt="Houda Gouizine, physiotherapist" />
 				</div>
 				<div class="team-member--content">
-					<h4 class="team-member--name">Houda Gouizine</h4>
+					<h3 class="team-member--name">Houda Gouizine</h3>
 					<span class="team-member--tag">Physiotherapist</span>
 					<p class="team-member--description">I chose a career in physiotherapy because I knew I wanted to help people without sticking them with needles.</p>
 				</div>
@@ -545,7 +546,7 @@
 					<img loading="lazy" decoding="async" width="800" height="800" src="/wp-content/uploads/2026/05/noureddine-gouizine.jpg" class="attachment-full size-full" alt="Noureddine Gouizine, physiotherapist" />
 				</div>
 				<div class="team-member--content">
-					<h4 class="team-member--name">Noureddine Gouizine</h4>
+					<h3 class="team-member--name">Noureddine Gouizine</h3>
 					<span class="team-member--tag">Physiotherapist</span>
 					<p class="team-member--description">As a physiotherapist, I have the daily opportunity to improve the lives of my patients.</p>
 				</div>
@@ -566,6 +567,7 @@
 </div></div></div></div></div>	</div>
 </div>
 
+</main>
 
 
 <footer class="footer">
@@ -579,7 +581,7 @@
 							<a class="icon-box" href="https://www.google.com/maps/dir/Current+Location/30.366667,-9.420611" target="_blank">
 								<div class="icon-box--icon"><i class="fa fas fa-map-marker-alt"></i></div>
 								<div class="icon-box--text">
-									<h6 class="icon-box--title"> Visit our clinic</h6>
+									<h3 class="icon-box--title"> Visit our clinic</h3>
 									<span class="icon-box--description">697 Rue 02, Av Alwifaq, Temsia</span>
 								</div>
 							</a>
@@ -588,7 +590,7 @@
 							<a class="icon-box" href="tel:+212659730283">
 								<div class="icon-box--icon"><i class="fa fas fa-phone-alt"></i></div>
 								<div class="icon-box--text">
-									<h6 class="icon-box--title"> Call us</h6>
+									<h3 class="icon-box--title"> Call us</h3>
 									<span class="icon-box--description">+212 6 59 73 02 83</span>
 								</div>
 							</a>
@@ -597,7 +599,7 @@
 							<a class="icon-box" href="mailto:info@kineagadir.com">
 								<div class="icon-box--icon"><i class="fa fas fa-envelope"></i></div>
 								<div class="icon-box--text">
-									<h6 class="icon-box--title"> Email us</h6>
+									<h3 class="icon-box--title"> Email us</h3>
 									<span class="icon-box--description">info@kineagadir.com</span>
 								</div>
 							</a>
