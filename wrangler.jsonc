@@ -5,10 +5,15 @@
   "observability": {
     "enabled": true
   },
+  "workers_dev": true,
   "assets": {
     "directory": "."
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "routes": [
+    { "pattern": "www.kineagadir.com", "custom_domain": true },
+    { "pattern": "kineagadir.com", "custom_domain": true }
   ]
 }
