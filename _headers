@@ -1,0 +1,43 @@
+# Cloudflare Pages cache + security headers
+# Docs: https://developers.cloudflare.com/pages/configuration/headers/
+
+# --- Long-cache for immutable static assets ----------------------------
+# WP uploads (images, fonts) — content keyed by filename hash, safe to
+# cache aggressively. Logos use ?v=2 query, other files are content-named.
+/wp-content/uploads/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Theme assets (CSS, JS, fonts) — all referenced with ?v= cache busters
+# in base.html, so the URL changes whenever a file changes.
+/wp-content/themes/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Plugin assets — same reasoning.
+/wp-content/plugins/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Bootstrap / jQuery from /wp-includes/
+/wp-includes/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- Short-cache for HTML ---------------------------------------------
+# Updates show up quickly; CDN respects max-age, browser revalidates.
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/
+  Cache-Control: public, max-age=300, must-revalidate
+
+# --- Sitemap + robots -------------------------------------------------
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600
+
+# --- Security headers (apply site-wide) -------------------------------
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
