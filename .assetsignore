@@ -1,0 +1,10 @@
+# Files in the deploy directory that should NOT be served as public assets.
+.assetsignore
+.gitignore
+.wrangler
+.nojekyll
+worker.js
+wrangler.jsonc
+README.md
+# Pre-tree-shake CSS backups — kept in git history, no need to serve.
+*.original.css
