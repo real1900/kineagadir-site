@@ -61,9 +61,18 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
 
 /* Navigation */
 .main-navigation > li > a {
-  font-family: var(--kg-font-display);
+  font-family: var(--kg-font-display) !important;
   font-weight: 500;
   font-size: 15px;
+  letter-spacing: 0.01em;
+}
+/* Sub-menu items: customizer sets Open Sans (removed from the Google
+   Fonts load), so without this they fall back to the browser default
+   sans-serif and visibly mismatch the rest of the site. */
+.main-navigation .sub-menu li a {
+  font-family: var(--kg-font-body) !important;
+  font-weight: 500;
+  font-size: 14px;
   letter-spacing: 0.01em;
 }
 
