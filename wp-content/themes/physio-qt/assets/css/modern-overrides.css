@@ -3,8 +3,14 @@
   --kg-text: #2d2d2d;
   --kg-text-strong: #1a1a1a;
   --kg-text-muted: #595959;
-  --kg-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, system-ui, sans-serif;
-  --kg-font-display: 'Manrope', var(--kg-font-body);
+  /* Latin-first cascade, then a stack of Arabic-Naskh fonts so Arabic
+     codepoints render in proper Naskh on every browser. Chrome on
+     macOS without an explicit Arabic font picks Noto Nastaliq Urdu —
+     which is Urdu calligraphy, not Arabic — so we name the right
+     fonts ourselves: Noto Sans Arabic (loaded), then Geeza Pro
+     (macOS), Segoe UI (Windows), Tahoma (legacy Windows). */
+  --kg-font-body: 'Inter', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, -apple-system, BlinkMacSystemFont, Roboto, system-ui, sans-serif;
+  --kg-font-display: 'Manrope', 'Noto Sans Arabic', 'Geeza Pro', 'Segoe UI', Tahoma, -apple-system, sans-serif;
 }
 
 html { -webkit-text-size-adjust: 100%; }
