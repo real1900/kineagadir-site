@@ -117,19 +117,44 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
     z-index: 1;
   }
   /* When the dropdown opens (hover or keyboard focus inside the li),
-     rotate the caret up and tighten its opacity. */
+     rotate the caret up and tighten its opacity. Caret flips to white
+     because the parent bg below turns purple. */
   .main-navigation > li.menu-item-has-children:hover::after,
   .main-navigation > li.menu-item-has-children:focus-within::after {
     transform: translateY(-25%) rotate(-135deg);
     opacity: 1;
+    color: #ffffff !important;
   }
-  /* Parent highlight: soft bg tint + 3 px purple inset border at the
-     bottom — that border sits exactly at the parent/dropdown seam,
-     anchoring the dropdown to its trigger. */
+  /* Parent highlight when dropdown opens: bg matches the sub-menu's
+     purple so parent + dropdown read as one solid block; text turns
+     white for contrast; a 3 px brand-light-blue accent at the parent
+     /dropdown seam ties it back to the rest of the site's accents. */
   .main-navigation > li.menu-item-has-children:hover > a,
   .main-navigation > li.menu-item-has-children:focus-within > a {
-    background-color: #f5f8fb !important;
-    box-shadow: inset 0 -3px 0 #9A65A5;
+    background-color: #9A65A5 !important;
+    color: #ffffff !important;
+    box-shadow: inset 0 -3px 0 #56afd5;
+    transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+  }
+
+  /* Dropdown reveal animation — slide-fade with a snappy modern easing
+     curve (ease-out-expo-ish). Visibility switches instantly on open
+     and waits for the fade-out to finish on close, so the menu is
+     never blocking clicks while invisible. */
+  .main-navigation .sub-menu {
+    transform: translateY(-8px);
+    transition:
+      opacity 220ms ease-out,
+      transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s linear 240ms;
+  }
+  .main-navigation > li.menu-item-has-children:hover > .sub-menu,
+  .main-navigation > li.menu-item-has-children:focus-within > .sub-menu {
+    transform: translateY(0);
+    transition:
+      opacity 220ms ease-out,
+      transform 240ms cubic-bezier(0.16, 1, 0.3, 1),
+      visibility 0s linear 0s;
   }
 }
 
