@@ -76,6 +76,57 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   letter-spacing: 0.01em;
 }
 
+/* ============================================================
+ * Dropdown menu UX — desktop only
+ *   • Visible caret on items that have a sub-menu (the theme uses
+ *     FontAwesome \f107 which isn't in our subsetted font).
+ *   • Parent visually anchors to the dropdown on open: subtle bg
+ *     + 3 px brand-purple inset border at the seam.
+ *   • Caret rotates 180° as open-state feedback.
+ *   • Reacts to :focus-within for keyboard users, not just :hover.
+ * ============================================================ */
+@media (min-width: 992px) {
+  .main-navigation > li.menu-item-has-children > a {
+    padding-right: 26px !important;
+  }
+  .main-navigation > li.menu-item-has-children::after {
+    /* Pure-CSS chevron — no font dependency, crisp at any DPI */
+    content: "" !important;
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    bottom: auto !important;
+    left: auto !important;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: translateY(-65%) rotate(45deg);
+    transition: transform 180ms ease, opacity 180ms ease;
+    font: inherit !important;
+    color: #1c6e91 !important;
+    line-height: 0;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 1;
+  }
+  /* When the dropdown opens (hover or keyboard focus inside the li),
+     rotate the caret up and tighten its opacity. */
+  .main-navigation > li.menu-item-has-children:hover::after,
+  .main-navigation > li.menu-item-has-children:focus-within::after {
+    transform: translateY(-25%) rotate(-135deg);
+    opacity: 1;
+  }
+  /* Parent highlight: soft bg tint + 3 px purple inset border at the
+     bottom — that border sits exactly at the parent/dropdown seam,
+     anchoring the dropdown to its trigger. */
+  .main-navigation > li.menu-item-has-children:hover > a,
+  .main-navigation > li.menu-item-has-children:focus-within > a {
+    background-color: #f5f8fb !important;
+    box-shadow: inset 0 -3px 0 #9A65A5;
+  }
+}
+
 /* Buttons */
 .btn {
   font-family: var(--kg-font-display);
