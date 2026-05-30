@@ -128,12 +128,13 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
   /* Hover highlight on EVERY top-level menu item (with or without a
      dropdown) — purple bg matches the sub-menu so dropdown parents
      read as one solid block with their menu, and items without a
-     dropdown stay visually consistent. White text for contrast,
-     brand-light-blue accent line at the bottom edge. */
+     dropdown stay visually consistent. Text color matches the brand
+     light-blue accent line at the bottom edge so the label and the
+     underline read as one visual unit. */
   .main-navigation > li:hover > a,
   .main-navigation > li:focus-within > a {
     background-color: #9A65A5 !important;
-    color: #ffffff !important;
+    color: #56afd5 !important;
     box-shadow: inset 0 -3px 0 #56afd5;
     transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
   }
@@ -555,7 +556,9 @@ aside.sidebar,
 
 /* Main navigation text on white. #828282 → #555 lifts contrast from
    3.84 to ~7.3. Brand-blue link color #56afd5 (2.47) is bumped to a
-   darker hue #1c6e91 (~4.6). */
+   darker hue #1c6e91 (~4.6). Hover state is intentionally NOT covered
+   here — the hover rule earlier in the file paints a purple bg, and
+   the matching text color is defined there. */
 @media (min-width: 992px) {
   .main-navigation > li > a {
     color: #555555 !important;
@@ -563,12 +566,6 @@ aside.sidebar,
   .main-navigation > li.current-menu-item > a,
   .main-navigation > li.current_page_parent > a,
   .main-navigation > li.current-menu-ancestor > a {
-    color: #1c6e91 !important;
-  }
-  .main-navigation > li:hover > a,
-  .main-navigation > li.current-menu-item:hover > a,
-  .main-navigation > li.current_page_parent:hover > a,
-  .main-navigation > li.current-menu-ancestor:hover > a {
     color: #1c6e91 !important;
   }
 }
