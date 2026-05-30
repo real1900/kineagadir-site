@@ -186,6 +186,16 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
     color: #56afd5 !important;
     box-shadow: inset 0 -3px 0 #56afd5;
   }
+
+  /* Drop the parent's bottom dash the moment a sub-menu item is the
+     actual hover/focus target, so only one accent shows at a time —
+     the one on the item the user is actually pointing at. Uses :has()
+     to react to the descendant's hover state; the existing box-shadow
+     transition on the parent fades it out smoothly. */
+  .main-navigation > li.menu-item-has-children:hover:has(.sub-menu > li:hover) > a,
+  .main-navigation > li.menu-item-has-children:focus-within:has(.sub-menu > li:focus-within) > a {
+    box-shadow: none;
+  }
 }
 
 /* Buttons */
