@@ -175,12 +175,15 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
      parent's bottom accent so the indicator visually "travels" down
      the list as the user moves through the items. The transition on
      every item makes the dash feel like it's sliding from row to row
-     rather than blinking on/off. */
+     rather than blinking on/off. Text color also flips to the same
+     brand light-blue so the hovered label, the dash, and the parent's
+     hover state all read as one unified accent. */
   .main-navigation .sub-menu > li > a {
     transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
   }
   .main-navigation .sub-menu > li:hover > a,
   .main-navigation .sub-menu > li:focus-within > a {
+    color: #56afd5 !important;
     box-shadow: inset 0 -3px 0 #56afd5;
   }
 }
