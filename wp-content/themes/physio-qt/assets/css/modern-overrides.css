@@ -125,12 +125,13 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
     opacity: 1;
     color: #ffffff !important;
   }
-  /* Parent highlight when dropdown opens: bg matches the sub-menu's
-     purple so parent + dropdown read as one solid block; text turns
-     white for contrast; a 3 px brand-light-blue accent at the parent
-     /dropdown seam ties it back to the rest of the site's accents. */
-  .main-navigation > li.menu-item-has-children:hover > a,
-  .main-navigation > li.menu-item-has-children:focus-within > a {
+  /* Hover highlight on EVERY top-level menu item (with or without a
+     dropdown) — purple bg matches the sub-menu so dropdown parents
+     read as one solid block with their menu, and items without a
+     dropdown stay visually consistent. White text for contrast,
+     brand-light-blue accent line at the bottom edge. */
+  .main-navigation > li:hover > a,
+  .main-navigation > li:focus-within > a {
     background-color: #9A65A5 !important;
     color: #ffffff !important;
     box-shadow: inset 0 -3px 0 #56afd5;
