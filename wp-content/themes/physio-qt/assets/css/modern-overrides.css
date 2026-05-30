@@ -657,3 +657,19 @@ a.text-link,
 .content-area a.text-link {
   color: #1c6e91 !important;
 }
+
+/* ============================================================
+ * Modern image styling — soft rounded corners on every content image
+ * for the contemporary "card-y" feel of 2020s product/clinic sites.
+ * 10 px is large enough to read as intentional at thumbnail sizes
+ * and small enough not to crop hero/slider content awkwardly.
+ *
+ * Exceptions:
+ *   * Header logo — brand identity must read pixel-accurate, no clipping.
+ * ============================================================ */
+img {
+  border-radius: 10px;
+}
+.header-logo img {
+  border-radius: 0;
+}
