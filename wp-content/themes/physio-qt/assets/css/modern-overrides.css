@@ -130,9 +130,21 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
      read as one solid block with their menu, and items without a
      dropdown stay visually consistent. Text color matches the brand
      light-blue accent line at the bottom edge so the label and the
-     underline read as one visual unit. */
+     underline read as one visual unit.
+     The explicit .current-*:hover variants bump specificity above
+     the a11y darken-for-white-bar rule (later in this file), so the
+     hover color also wins on the active page's own top-level item
+     and its dropdown ancestors. Without these variants, hovering the
+     active page's parent (e.g. "خدماتنا" on a Services sub-page)
+     would keep the darker #1c6e91 from the a11y rule. */
   .main-navigation > li:hover > a,
-  .main-navigation > li:focus-within > a {
+  .main-navigation > li:focus-within > a,
+  .main-navigation > li.current-menu-item:hover > a,
+  .main-navigation > li.current-menu-item:focus-within > a,
+  .main-navigation > li.current_page_parent:hover > a,
+  .main-navigation > li.current_page_parent:focus-within > a,
+  .main-navigation > li.current-menu-ancestor:hover > a,
+  .main-navigation > li.current-menu-ancestor:focus-within > a {
     background-color: #9A65A5 !important;
     color: #56afd5 !important;
     box-shadow: inset 0 -3px 0 #56afd5;
