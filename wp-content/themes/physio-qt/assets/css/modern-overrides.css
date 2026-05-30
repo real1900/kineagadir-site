@@ -171,18 +171,24 @@ h6 { font-size: 1rem; font-weight: 600; letter-spacing: 0; }
       visibility 0s linear 0s;
   }
 
-  /* Blue accent dash follows the hovered sub-menu item. Mirrors the
-     parent's bottom accent so the indicator visually "travels" down
-     the list as the user moves through the items. The transition on
-     every item makes the dash feel like it's sliding from row to row
-     rather than blinking on/off. Text color also flips to the same
-     brand light-blue so the hovered label, the dash, and the parent's
-     hover state all read as one unified accent. */
+  /* Sub-menu hover state — same signal as top-level: dash + light-blue
+     text, no bg shift. The customizer paints a darker purple #905b9b
+     and a matching dark top-border on hover, but with the top-level
+     items already painting #9A65A5 on hover, that second purple gives
+     sub-items a different hover signature than their parents. Hold the
+     sub-menu hover bg at #9A65A5 (= dropdown bg = parent hover bg) so
+     the entire menu shares one purple, and the only thing that changes
+     on hover is the dash + the label color. Border-top is kept neutral
+     so it doesn't flash a darker line on the hovered row.
+     The shared transition on every sub-menu link makes the dash feel
+     like it slides from row to row rather than blinking on/off. */
   .main-navigation .sub-menu > li > a {
     transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
   }
   .main-navigation .sub-menu > li:hover > a,
   .main-navigation .sub-menu > li:focus-within > a {
+    background-color: #9A65A5 !important;
+    border-top-color: transparent !important;
     color: #56afd5 !important;
     box-shadow: inset 0 -3px 0 #56afd5;
   }
